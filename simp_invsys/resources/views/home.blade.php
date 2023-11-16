@@ -16,7 +16,9 @@
             <h2>Product Table
                 <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addnew">
                   <i class="bi bi-clipboard2-plus-fill"></i> Add New product
-                </button><!--
+                </button>
+                <a class="btn btn-primary float-end" href="{{ route('logout') }}" role="button">Logout</a>
+                <!--
                 <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addnewCat">
                   <i class="bi bi-clipboard2-plus-fill"></i> Add New Category
                 </button>

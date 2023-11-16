@@ -34,7 +34,7 @@ class ProductController extends Controller
 
         $product->save();
 
-        return redirect('/');
+        return redirect('/home');
     }
 /*
     public function savecat(Request $request){

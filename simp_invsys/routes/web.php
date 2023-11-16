@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AuthManager;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,14 @@ use App\Http\Controllers\ProductController;
 //Route::get('/', function () {
 //    return view('welcome');
 //});
+Route::get('/', function () {
+    return view('auth.login');
+});
+Auth::routes();
 
-Route::get('/', [ProductController::class,'index']);
-Route::post('/savecat', [ProductController::class,'savecat']);
-Route::post('/savebra', [ProductController::class,'savebra']);
+Route::get('/home', [ProductController::class,'index']);
+//Route::post('/savecat', [ProductController::class,'savecat']);
+//Route::post('/savebra', [ProductController::class,'savebra']);
 Route::post('/save', [ProductController::class,'save']);
 
+Route::get('/logout', [AuthManager::class,'logout'])->name('logout');
