@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AuthManager;
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +24,12 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/home', [ProductController::class,'index']);
-//Route::post('/savecat', [ProductController::class,'savecat']);
-//Route::post('/savebra', [ProductController::class,'savebra']);
+Route::get('/home', [ProductController::class,'index'])->name('home');
+Route::get('/brand', [BrandController::class,'index'])->name('brand');
+Route::get('/category', [CategoryController::class,'index'])->name('category');
+
+Route::post('/savecat', [CategoryController::class,'savecat']);
+Route::post('/savebra', [BrandController::class,'savebra']);
 Route::post('/save', [ProductController::class,'save']);
 
 Route::get('/logout', [AuthManager::class,'logout'])->name('logout');
