@@ -44,7 +44,7 @@
     </div>
 </div>
 
-@include('modalbra')
+@include('catbra.modal.modal')
 
 </body>
 </html>
